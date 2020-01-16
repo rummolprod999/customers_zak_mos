@@ -21,7 +21,7 @@ def download_list(url, i):
     data = {
         "filter": {"treePathIds": 'null', "regionPaths": [".504."], "companyNameLike": 'null', "companyInnLike": 'null',
                    "companyOgrnLike": 'null', "companyKppLike": 'null', "showArchived": 'null', "registered": 'null',
-                   "showChildren": 'null', "isWorksOnFz223": 'null'}, "take": "50", "skip": i,
+                   "showChildren": 'null', "isWorksOnFz223": 'null'}, "take": "50", "skip": i*50,
         "order": [{"field": "id", "desc": 'true'}], "withCount": 'true'}
     data = urllib.parse.urlencode(data).encode("utf-8")
     req = urllib.request.Request(url=url, data=data)
